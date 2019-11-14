@@ -1,0 +1,15 @@
+<div class="container">
+
+    <div *ngIf="(wishlist$|async)" class="cardContainer">
+        <mat-card *ngFor="let book of (wishlist$|async).wishlist" class="bookCard">
+
+                <div class="bookPicWrapper"> <img src="{{book.imageUrl}}" class="bookPic"></div>
+            <mat-card-title>{{book.title}}</mat-card-title>
+            <mat-card-title>Author/s: {{book.authors}}</mat-card-title>
+            <mat-card-subtitle>Publisher: {{book.publisher}}</mat-card-subtitle>
+            <mat-card-content>Description: {{book.description}}</mat-card-content>
+            <mat-card-actions><button mat-button (click)=removeFromWishlist(book)>Remove from wishlist</button></mat-card-actions>
+            
+        </mat-card>
+    </div>
+</div>

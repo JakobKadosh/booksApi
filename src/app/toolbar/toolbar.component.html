@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <h2 *ngIf="(username$|async).username as username;else elseBlock">
+        Welcome {{username}}. 
+    </h2>
+    <ng-template #elseBlock>
+        <h2>Please sign in </h2>
+    </ng-template>
+    <span class="flex-spacer"></span>
+    <button mat-button [routerLink]="['/search']" routerLinkActive="mat-accent">
+        Home
+    </button>
+    <button mat-button [routerLink]="['/wishlist']" routerLinkActive="mat-accent">
+        Wishlist
+    </button>
+</mat-toolbar>

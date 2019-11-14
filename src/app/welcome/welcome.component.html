@@ -1,0 +1,8 @@
+<form class="container">
+  <mat-form-field class="input">
+    <input type="text" matInput placeholder="Please enter you're full name.." [formControl]="formControl" required>
+    <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <br>
+  <button *ngIf="!formControl.invalid" mat-button (click)="submit()">Submit</button>
+</form>
